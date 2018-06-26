@@ -1,4 +1,4 @@
-package com.ljj.javasimple.rxjava;
+package com.ljj.javasimple.rxjava.comm;
 
 
 import io.reactivex.Observer;
