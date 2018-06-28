@@ -1,4 +1,4 @@
-package com.ljj.javasimple.rxjava;
+package com.ljj.javasimple.rxjava.subject;
 
 import com.ljj.javasimple.rxjava.comm.CommObserver;
 import io.reactivex.subjects.PublishSubject;
@@ -6,14 +6,14 @@ import io.reactivex.subjects.Subject;
 
 /**
  * 将Subject串行化的方法，所有其他的Observable和Subject方法都是线程安全的。
- *
+ * <p>
  * 通过Subject.toSerialized()方法将Subject对象串行化保证其线程安全
- *
+ * <p>
  * 使用RxBus，会额外增加更多的支出（因为RxBus中PublisSuject本身的单例对象就是调用了toSerialized()方法保证线程安全
  */
 public class SerializedSubjectTest {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Subject<Object> subject = PublishSubject.create().toSerialized();
         subject.subscribe(new CommObserver("observer1"));
         subject.onNext("1");

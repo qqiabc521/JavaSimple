@@ -33,10 +33,10 @@ public class ReentrantLockTest {
 
         @Override
         public void run() {
-            while (true){
+            while (true) {
                 LOCK.lock();
                 try {
-                    if(test.count >= 100){
+                    if (test.count >= 100) {
                         break;
                     }
                     if (test.flag) {
@@ -60,16 +60,16 @@ public class ReentrantLockTest {
 
         @Override
         public void run() {
-            while (true){
+            while (true) {
                 LOCK.lock();
                 try {
-                    if(test.count >= 100){
+                    if (test.count >= 100) {
                         break;
                     }
                     if (!test.flag) {
                         test.count++;
                         test.flag = true;
-                        System.out.println(Thread.currentThread().getName()+" count = " + test.count);
+                        System.out.println(Thread.currentThread().getName() + " count = " + test.count);
                     }
                 } finally {
                     LOCK.unlock();

@@ -7,7 +7,7 @@ import io.reactivex.disposables.Disposable;
 public class CommObserver implements Observer {
     private String name;
 
-    public CommObserver(String name){
+    public CommObserver(String name) {
         this.name = name;
     }
 
@@ -16,11 +16,11 @@ public class CommObserver implements Observer {
     }
 
     public void onNext(Object o) {
-        System.out.println(name + " onNext: "+o.toString());
+        System.out.println(name + " onNext: " + o.toString());
     }
 
     public void onError(Throwable throwable) {
-        System.out.println(name + " onError: "+throwable.getMessage());
+        System.out.println(name + " onError: " + throwable.getMessage());
     }
 
     public void onComplete() {

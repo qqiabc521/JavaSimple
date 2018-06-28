@@ -1,7 +1,6 @@
-package com.ljj.javasimple.rxjava;
+package com.ljj.javasimple.rxjava.subject;
 
 import com.ljj.javasimple.rxjava.comm.CommObserver;
-import io.reactivex.subjects.AsyncSubject;
 import io.reactivex.subjects.UnicastSubject;
 
 /**
@@ -11,7 +10,7 @@ import io.reactivex.subjects.UnicastSubject;
  */
 public class UnicastSubjectTest {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         UnicastSubject<String> subject = UnicastSubject.create();
         subject.subscribe(new CommObserver("observer1"));
         subject.onNext("1");
