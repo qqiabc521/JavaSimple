@@ -1,4 +1,4 @@
-package com.ljj.javasimple.cache;
+package com.ljj.javasimple.proxycache;
 
 import java.util.HashMap;
 import java.util.Map;
